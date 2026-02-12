@@ -787,7 +787,7 @@ export default function Home() {
             href="tel:8667560058"
             className="text-sky-300 hover:underline"
           >
-            8667560058
+            +91 8667560058
           </a>
         </div>
 
