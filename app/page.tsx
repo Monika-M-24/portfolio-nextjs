@@ -502,6 +502,28 @@ export default function Home() {
       {/* Project 1 */}
       <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+          Sri Ramajayam School Website Redesign & Development
+        </h3>
+        <p className="text-sky-200">
+          Next.js, React.js, JavaScript, HTML, CSS, Vercel
+        </p>
+        <ul className="mt-3 list-disc list-inside text-sky-100 space-y-2 text-sm sm:text-base">
+          <li>
+            Developed a modern and responsive school website using Next.js with an intuitive user interface.
+          </li>
+          <li>
+            Built a responsive school website from scratch using Next.js and React.js.
+          </li>
+          <li>
+            Deployed the website on Vercel and maintained version control using Git and GitHub.
+          </li>
+        </ul>
+      </div>
+
+            {/* Project 1.1 */}
+
+      <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
           Full Stack Portfolio Website
         </h3>
         <p className="text-sky-200">
