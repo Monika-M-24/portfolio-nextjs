@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";   // 👈 ADD THIS HERE
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
 
@@ -11,10 +12,10 @@ export default function Home() {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_nv761bh",      // replace
-      "template_j9xiip8",     // replace
+      "service_nv761bh",
+      "template_j9xiip8",
       e.currentTarget,
-      "lvAaBx6IYgIatDDTa"      // replace
+      "lvAaBx6IYgIatDDTa"
     ).then(
       () => {
         alert("Message sent successfully!");
@@ -24,10 +25,16 @@ export default function Home() {
         console.log(error);
       }
     );
+
     e.currentTarget.reset();
   };
+
   /* ================= MOUSE GLOW ================= */
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -38,9 +45,11 @@ export default function Home() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
   /* ================= PARTICLES ================= */
   type Particle = {
     left: string;
@@ -199,9 +208,9 @@ export default function Home() {
           text-white
         "
       >
-        Hi, I’m {typedName}
-        <span className="ml-1 animate-pulse">|</span>
-      </h1>
+       Hi, I’m {typedName}
+  <span className="ml-1 animate-pulse">|</span>
+</h1>
 
       {/* ROLE */}
       <h2
@@ -214,9 +223,9 @@ export default function Home() {
           text-sky-300
         "
       >
-        {typedRole}
-        <span className="ml-1 animate-pulse">|</span>
-      </h2>
+       {typedRole}
+  <span className="ml-1 animate-pulse">|</span>
+</h2>
 
       {/* DESCRIPTION */}
       <p
@@ -229,26 +238,60 @@ export default function Home() {
           leading-7
         "
       >
-        This is a real-time personal website project built using Next.js,
-        designed and developed to showcase my skills, projects, and
-        technical expertise. I have hands-on experience with Python, SQL,
-        Power BI, HTML, CSS, JavaScript, and Next.js.
+        Computer Science graduate with hands-on experience in Full Stack Development and Data Analytics. Skilled in Next.js, React.js, Python, SQL, JavaScript, and Power BI. Passionate about building scalable web applications and data-driven solutions.
       </p>
 
       {/* BUTTONS */}
       <div className="mt-6 flex flex-col sm:flex-row gap-4">
-        <a
-          href="#projects"
-          className="rounded-lg bg-sky-700 px-8 py-3 text-white hover:bg-sky-800 transition">
-          View Projects
-        </a>
+  <a
+    href="#projects"
+    className="rounded-lg bg-sky-700 px-8 py-3 text-white hover:bg-sky-800 transition"
+  >
+    View Projects
+  </a>
 
-        <a
-          href="#contact"
-          className="rounded-lg border border-sky-300 px-8 py-3 text-white hover:bg-sky-400 hover:text-white transition">
-          Get In Touch
-        </a>
-      </div>
+  <a
+    href="/Monika M.pdf"
+    download
+    className="rounded-lg bg-sky-700 px-8 py-3 text-white hover:bg-sky-800 transition"
+  >
+    Download Resume
+  </a>
+
+  <a
+    href="#contact"
+    className="rounded-lg border border-sky-300 px-8 py-3 text-white hover:bg-sky-400 hover:text-white transition"
+  >
+    Get In Touch
+  </a>
+</div>
+
+<div className="mt-6 flex items-center justify-center gap-6">
+  <a
+    href="https://github.com/Monika-M-24"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sky-300 hover:text-sky-400 transition text-3xl"
+  >
+    <FaGithub />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/monika-m-ba9a67249"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sky-300 hover:text-sky-400 transition text-3xl"
+  >
+    <FaLinkedin />
+  </a>
+
+  <a
+    href="mailto:mmonikam2004@gmail.com"
+    className="text-sky-300 hover:text-sky-400 transition text-3xl"
+  >
+    <FaEnvelope />
+  </a>
+</div>
 
     </div>
   </div>
@@ -382,22 +425,7 @@ export default function Home() {
       </div>
 
       {/* 10th */}
-      <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
-          Sri Ramajayam Matric Higher Secondary School
-        </h3>
-        <p className="text-sky-200">
-          Polur, Tiruvannamalai, Tamil Nadu
-        </p>
-        <p className="mt-2">
-          <span className="font-medium">
-            Secondary School (10th)
-          </span>
-        </p>
-        <p className="text-sky-200">
-          Percentage: <span className="font-semibold">66%</span>
-        </p>
-      </div>
+      
 
     </div>
   </div>
@@ -501,9 +529,34 @@ export default function Home() {
 
       {/* Project 1 */}
       <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-          Sri Ramajayam School Website Redesign & Development
-        </h3>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+    Sri Ramajayam School Website Redesign & Development
+  </h3>
+
+  <a
+    href="https://sri-ramajayam-school.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-block
+      bg-sky-300
+      text-blue-900
+      font-semibold
+      px-4
+      py-2
+      rounded-lg
+      transition-all
+      duration-300
+      hover:bg-sky-400
+      hover:scale-105
+      hover:shadow-lg
+      w-fit
+    "
+  >
+    Live Demo
+  </a>
+</div>
         <p className="text-sky-200">
           Next.js, React.js, JavaScript, HTML, CSS, Vercel
         </p>
@@ -523,9 +576,34 @@ export default function Home() {
             {/* Project 1.1 */}
 
       <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
           Full Stack Portfolio Website
         </h3>
+        <a
+    href="https://nextjs-monika-portfolio.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-block
+      bg-sky-300
+      text-blue-900
+      font-semibold
+      px-4
+      py-2
+      rounded-lg
+      transition-all
+      duration-300
+      hover:bg-sky-400
+      hover:scale-105
+      hover:shadow-lg
+      w-fit
+    "
+  >
+    Live Demo
+  </a>
+</div>
+        
         <p className="text-sky-200">
           Next.js, React, Tailwind CSS
         </p>
@@ -544,9 +622,34 @@ export default function Home() {
 
       {/* Project 2 */}
       <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
           AI-Based Emergency Vehicle Priority System
         </h3>
+        <a
+    href="https://ai-based-emergency-vehicle-priority.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-block
+      bg-sky-300
+      text-blue-900
+      font-semibold
+      px-4
+      py-2
+      rounded-lg
+      transition-all
+      duration-300
+      hover:bg-sky-400
+      hover:scale-105
+      hover:shadow-lg
+      w-fit
+    "
+  >
+    Live Demo
+  </a>
+</div>
+        
         <p className="text-sky-200">
           Python, YOLO
         </p>
@@ -580,9 +683,34 @@ export default function Home() {
 
       {/* Project 4 */}
       <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
           Healthcare Management Website (MediWeb)
         </h3>
+
+        <a
+    href="https://medi-web-six.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-block
+      bg-sky-300
+      text-blue-900
+      font-semibold
+      px-4
+      py-2
+      rounded-lg
+      transition-all
+      duration-300
+      hover:bg-sky-400
+      hover:scale-105
+      hover:shadow-lg
+      w-fit
+    "
+  >
+    Live Demo
+  </a>
+</div>
         <p className="text-sky-200">
           HTML, CSS · Deployed on Vercel
         </p>
@@ -596,23 +724,7 @@ export default function Home() {
         </ul>
       </div>
 
-      {/* Project 5 */}
-      <div className="border-l-4 border-sky-400 pl-5 sm:pl-6">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-          Portfolio Website
-        </h3>
-        <p className="text-sky-200">
-          HTML, CSS
-        </p>
-        <ul className="mt-3 list-disc list-inside text-sky-100 space-y-2 text-sm sm:text-base">
-          <li>
-            Designed and developed a personal portfolio showcasing 5+ projects.
-          </li>
-          <li>
-            Focused on clean UI design and responsive layout.
-          </li>
-        </ul>
-      </div>
+      
 
     </div>
   </div>
